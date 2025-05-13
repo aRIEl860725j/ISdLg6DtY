@@ -4,7 +4,6 @@ var cors = require('cors')
 const app = express()
 const bodyParser = require('body-parser')
 const path = require("path")
-var xss = require("xss")
 
 var server = http.createServer(app)
 var io = require('socket.io')(server)
