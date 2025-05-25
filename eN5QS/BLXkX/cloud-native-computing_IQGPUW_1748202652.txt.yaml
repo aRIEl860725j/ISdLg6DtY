@@ -1,0 +1,37 @@
+---
+default_install_hook_types: [pre-commit, pre-push]
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff
+        entry: ruff --fix --show-fixes
+        language: system
+        types: [python]
+        require_serial: true
+      - id: ruff-format
+        name: ruff-format
+        entry: ruff format
+        language: system
+        types: [python]
+        require_serial: true
+      - id: pyright
+        name: pyright
+        entry: pyright
+        language: system
+        types: [python]
+        require_serial: true
+        exclude: hail/python/(hail|test)
+        stages:
+          - pre-push
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/thibaudcolas/curlylint
+    rev: v0.13.1
+    hooks:
+      - id: curlylint
+        types: [file] # By default only runs on .jinja files, this disables that
+        files: \.html$
