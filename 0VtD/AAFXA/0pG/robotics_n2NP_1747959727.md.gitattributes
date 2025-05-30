@@ -2,7 +2,6 @@
 *.sh text eol=lf
 
 # Force LF line endings for configuration files
-*.yml text eol=lf
 *.yaml text eol=lf
 *.json text eol=lf
 
