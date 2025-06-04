@@ -4,7 +4,6 @@
 # Force LF line endings for configuration files
 *.yaml text eol=lf
 *.json text eol=lf
-
 # Force LF for Docker-related files
 Dockerfile text eol=lf
 *.dockerignore text eol=lf
